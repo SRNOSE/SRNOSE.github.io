@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>수도요소</title>
+    <style>
+        .pseudo::first-letter{
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .pseudo::first-line{
+            text-decoration: underline;
+        }
+        .pseudo::after{
+            content: '안뇽';
+        }
+        .pseudo::before{
+            content: '잘가';
+        }
+
+        /*
+         input요소가 file인 버튼에만 스타일 주고 싶을때 pseudo요소 찾아서 선택자로 지정 
+
+         -webkit(크롬,사파리, 엣지)
+         -moz(파이어폭스)
+
+
+         하지만 실제로는 label에 스타일을 주는 방식을 많이 사용한다
+        */
+        input[type=file]::-webkit-file-upload-button{
+            background: skyblue;
+            border: 1px solid yellow;
+        }
+        input[type=text]::-webkit-input-placeholder{
+            color: red;
+        }
+        #prog{
+            width: 100%;
+            height: 44px;
+            appearance: none;
+        }
+        #prog::-webkit-progress-bar{
+            background-color: pink;
+            border-radius: 10px;
+            width: 100%;
+            overflow: hidden;
+        }
+        #prog::-webkit-progress-value{
+            background-color: tomato;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+ 
+    <div class="main-background">
+        <h1 class="main-title">Buy Your Shoes!! Now on sale</h1> 
+        <p class="tit">매일 신어도 편한 신발!!</p>
+        <button type="button" class="buy-btn">Buy Now</button>
+     </div>
+     <div class="expain-box">
+         <h2>How we design our shoes</h2>
+         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, facere, totam ea est, repellendus molestiae ullam minus adipisci necessitatibus itaque eum hic odio laudantium sit vero in accusantium corporis ab.</p>
+     </div>
+     <br>
+     <div class="expain-box" >
+         <h2>How we design our shoes</h2>
+         <p class="pseudo">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vitae, facere, totam ea est, repellendus molestiae ullam minus adipisci necessitatibus itaque eum hic odio laudantium sit vero in accusantium corporis ab.</p>
+     </div>
+     <input type="file" name="" id="" class="inp-file" >
+     <input type="text" name="" id="" placeholder="안녕하세요">
+     <hr>
+     <h2>progress태그</h2>
+     <div>
+        <progress value="20" max="100" id="prog"></progress>
+        <button onclick="progBtn()">Click</button>
+     </div>
+     <script>
+        function progBtn(){
+            const pro =document.getElementById('prog')
+            pro.value='80';
+        }
+     </script>
+</body>
+
+</html>

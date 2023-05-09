@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>API</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <li id="active">Javascript</li>
+    </ul>
+
+
+<script>
+
+    // 식별자 API
+    // console.log(document.getElementById('active').tagName)
+    /* LI */
+    var active=document.getElementById('active');
+    active.id='deactive';
+    active.className='important current'
+    active.className+=' readed';
+    console.log(active.id);
+
+</script>
+
+</body>
+
+</html>

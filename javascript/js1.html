@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js"></script>
+    <title>html에서 자바스크립트 로드하기</title>
+</head>
+<body>
+
+    <!-- 내부로 넣기:html이라는 정보와 자바스크립트라는 제어가 섞여있어서 정보로서 가치가 떨어진다 -->
+    <!-- <input type="button" onclick="alert('Hello World')" value="Hello World" /> -->
+    <!-- <input type="button" id="hw" value="Hello World" /> -->
+
+    <!-- <script src="./script.js"></script> body바로 전에 와도 됑(선호) -->
+
+    <!-- 사용자와 커뮤니케이션 하기(alert) -->
+    
+    <!-- <input type="button" value="alert" onclick="alertFnc();" /> -->
+
+      <!-- 사용자와 커뮤니케이션 하기(confirm) -->
+      <!-- <input type="button" value="confirm" onclick="funct_confirm();"> -->
+
+      <!-- 사용자와 커뮤니케이션 하기(prompt) -->
+      <input type="button" value="prompt" onclick="funct_prompt();">
+
+    <script>
+        // function alertFnc(){
+        //     alert(1);
+        //     alert(2);
+        //     alert(3);
+        //     // alert창의 확인을 누르기전까지 다음 동작들이 실행되지 않는다
+        // }
+
+        // function funct_confirm(){
+        //     if(confirm('ok?')){
+        //         alert('ok');/* ok를 누르면 */
+        //     }else{
+        //         alert('cancel')/* 캔슬을 누르면 */
+        //     }
+        // }
+
+        function funct_prompt(){
+            if(prompt('id')==='egoing'){
+                alert('Welcome');
+            }else{
+                alert('fail');
+            }
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- normalize브라우저마다 다르게 보이는데 오차를 줄이기위해서 초기화하는 작업 -->
+    <title>cart숙제</title>
+</head>
+<body>
+    <div class="cart">
+        <table class="cart-table">
+            <thead>
+                <tr>
+                    <th colspan="2">ITEM</th>
+                    <th>AMOUNT</th>
+                    <th>PRICE</th>
+                    <th>TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="2">
+                        <span class="img-box">
+                            <img src="./images/egg.png" alt="에그 이미지">
+                            <span class="img-tit">
+                                SONY
+                                <em>FE 70-200 mm F2.8 GM OSS</em>
+                            </span>
+                        </span>
+                    </td>
+                    <td>1</td>
+                    <td>€197,900</td>
+                    <td>€197,900</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <span class="img-box">
+                            <img src="./images/egg.png" alt="에그 이미지">
+                            <span class="img-tit">
+                                SONY
+                                <em>FE 70-200 mm F2.8 GM OSS</em>
+                            </span>
+                        </span>
+                    </td>
+                    <td>1</td>
+                    <td>€197,900</td>
+                    <td>€197,900</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5">€2968,900</td>
+                </tr>
+            </tfoot>
+        </table>
+        <div class="outoftbl">
+            <button type="button">Choose payment method</button>
+        </div>
+        <input type="text" class="input-test">
+        <a href="#" class="link">링크</a>
+    </div>
+
+    <!-- css코드 줄이기 -->
+    <button class="css-btn bg-red font-small">더알아보기</button>
+    <button class="css-btn bg-blue font-medium">구매하기</button>
+</body>
+</html>

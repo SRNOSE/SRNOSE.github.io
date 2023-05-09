@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>API</title>
+</head>
+
+<body>
+    <a id="target" href="http://opentutorials.org">opentutorials</a>
+    <!-- <p id="target">Hello World</p> -->
+
+    <!-- 💟속성과 프로퍼티💟 -->
+    <!-- 
+        @@@attr@@@ attribute방식을 줄여서 사용하는 방식이고 prop은 property방식 줄여서 사용하는 방식
+     -->
+
+
+<script>
+
+    //속성 API
+    var t=$('#target');
+    // t.setAttribute('class','important');
+    /* 속성방식 */
+    t.attr('class','important');
+    console.log(t.attr('href'));
+    console.log(t.prop('href'));
+
+    t.className='important';/* property방식 */
+</script>
+
+</body>
+
+</html>

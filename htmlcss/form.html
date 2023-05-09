@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- normalize브라우저마다 다르게 보이는데 오차를 줄이기위해서 초기화하는 작업 -->
+    <title>form</title>
+</head>
+<body>
+    <div class="form-cont">
+        <form>
+            <h1 class="title">고세라</h1>
+            <span class="input-box">
+                <label for="email">Your Email</label>
+                <input type="email" id="email">
+            </span>
+            <div class="name-box">
+                <span class="input-box">
+                    <label for="first">First name</label>
+                    <input type="text" id="first">
+                </span>
+                <span class="input-box">
+                    <label for="last">Last name</label>
+                    <input type="text" id="last">
+                </span>
+            </div>
+            <div class="text-box">
+                <p class="tit">Message</p>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div class="bottom-box">
+                <span class="input-box">
+                    <input type="checkbox" id="chk">
+                    <span class="sub">subscribe</span>
+                </span>
+                <span class="input-box">
+                    <input type="submit" id="submit" class="submit-btn">
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

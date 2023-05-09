@@ -1,0 +1,537 @@
+/*************** 폰트****************/
+@font-face {
+    font-family:'NanumSquare',sans-serif;
+    src: url(../font/NanumSquareR.woff);/* woff가 용량이 적다 */
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'NanumSquare', sans-serif;
+}
+/* 폰트를 축소하거나 확대했을때 이쁘지 않고 깨짐 현상이 발생할때 처리법!! */
+p,h1~h5,span{
+    transform: rotate(0.03deg);/* 각도를 살짝 돌려주면 이쁘고 부드럽게 나온다 */
+}
+
+/*************** 폰트****************/
+
+
+
+
+
+
+
+/*********** reset.css ***********/
+div{
+    box-sizing: border-box;
+    /* padding을 줘도 박스 크기 변하지않게하기위해서 */
+}
+*{padding: 0;margin: 0;}
+table{
+    border-collapse: collapse;/* 테이블 간 간격없애기위해 */
+}
+/* img{width: 100%;} */
+input{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border-color:transparent;
+}
+a{
+    text-decoration: none;
+}
+ul,dl,ol{
+    list-style: none;
+}
+/*********** reset.css ***********/
+
+
+
+.container{
+    display: flex;
+    margin: 0 auto;
+}
+.left-menu{
+    width: 80%;
+    height: 100%;
+}
+.right{
+    width: 20%;
+    height: 100%;
+}
+.right .img-box{
+    width: 200px;
+    height: 100%;
+    display: inline-block;
+}
+.navbar{
+    display: flex;
+}
+.navbar li{
+    list-style: none;
+}
+.navbar li a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #666;
+}
+.main-background{
+    width: 100%;
+    height: 500px;
+    background-image: url(../images/shoes.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;/* 이미지를 꽉 채워라 */
+    /* background-size: contain;이미지를 짤리지않게 보여줘라*/  
+    background-position:  center; /* 가운데부터 채워라 */
+    /* background-attachment: fixed;스크롤 생길경우 background가 고정 */
+    /* filter: brightness(70%)  */
+    padding: 1px;
+    /* 테두리에 패딩이 생겨서 두 박스가 겹쳐져있는게 아니라서 */
+    text-align: center;
+}
+.main-title{
+    color: #fff;
+    font-size: 40px;
+    margin-top: 100px;
+    /* margin을 줬는데 박스 자체에 마진이 먹힌다
+        margin-collape현상
+        박스 두개의 위쪽이 겹쳐져있어서
+        부모박스에 padding을 주면 해결된다
+     */
+    
+}
+.main-background .tit{
+    color: #fff;
+    font-size: 20px;
+    padding-bottom: 100px;
+}
+.buy-btn{
+    background: #fff;
+    width:100px;
+    height: 40px;
+    border: none;
+    color: #666;
+    position: relative;
+    z-index: 2;
+}
+.expain-box{
+    /* width: 700px; */
+    width: 80%;
+     max-width: 600px;
+    /* 내 부모요소의 80%, 그런제 pc용에서 사이즈가 너무 크기때문에 max-width쓴다 */
+    padding: 20px;
+    text-align: center;
+    background-color: #eee;
+    margin: 0 auto;
+    position: relative;/* 현재위치에서 이동해야하니까 */
+    top: -150px;
+    z-index: 1;
+}
+
+/*form*/
+.form-cont{
+    background: #666;
+    width: 100%;
+    height: 100vh;
+    padding: 1px;
+}
+.form-cont form{
+    width: 300px;
+    margin: 100px auto 0;
+    background-color: #fff;
+    padding: 30px;
+}
+.input-box label{
+    display: inline-block;
+    font-size: 14px;
+    color: #222;
+    padding: 10px 0;
+}
+.input-box input{
+    width: 100%;
+}
+.name-box{
+    display: flex;
+    justify-content: space-between;
+}
+.name-box>.input-box{
+    width: calc(50% - 10px);
+    margin-bottom: 10px;
+}
+.text-box textarea{
+    width: 100%;
+}
+.tit{
+    margin-bottom: 10px;
+}
+.bottom-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.bottom-box>.input-box:nth-child(1){
+    display: flex;
+    align-items:flex-end;
+}
+
+.cart{
+    width: 100%;
+    height: 100vh;
+    background-color: skyblue;
+    padding: 1px;
+    text-align: center;
+}
+.cart-table{
+    width: 80%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.cart-table th,
+.cart-table td{
+    font-size: 13px;
+    padding: 5px;
+    color:cornflowerblue;
+}
+.cart-table .img-box{
+    display: inline-block;
+    width: 100px;
+    height: 100%;
+}
+.cart-table tr{
+    border-bottom: 1px solid cornflowerblue;
+}
+.outoftbl{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.outoftbl>button{
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    background: tomato;
+    color: #fff;
+}
+
+/* 순서가 중요하다 hover, focus, active(hofa) */
+.outoftbl>button:hover{
+    background:chocolate;
+}
+.outoftbl>button:focus{
+    background: blue;
+}/* 마우스 클릭하고 떼었을때 스타일이 유지된다 */
+.outoftbl>button:active{
+    background: pink;
+}
+.input-test{
+    font-size: 20px;
+}
+.input-test:focus{
+    border-color: tomato;
+}
+.link:link,
+.link:visited
+{/* 링크를 누루기 전 스타일 변경 */
+    color: aqua;
+}
+.css-btn{
+    font-size: 14px;
+    padding: 5px 10px;
+    border: none;
+    color: #fff;
+}
+.bg-red{
+    background-color: red;
+}
+.bg-blue{
+    background-color: blue;
+}
+.font-small{
+    font-size: 12px;
+}
+.font-medium{
+    font-size: 16px;
+}
+
+/* flexbox */
+.flex-container{
+    display: flex;
+    justify-content: center;
+}
+.flex-item{
+    width: 100px;
+    height: 100px;
+    background-color: #eee;
+    margin: 5px;
+}
+
+@media screen and (max-width:1200px) {
+    .main-title{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:992px) {
+    .main-title{
+        font-size: 16px;
+    }
+}
+@media screen and (max-width:768px) {
+    .main-title{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:576px) {
+    .main-title{
+        font-size: 13px;
+    }
+}
+
+/* 주로 많이 쓰는 중단점 */
+
+.box{
+    width: 80%;
+    max-width: 800px;
+    height: 150px;
+    background-color: #dddddda4;
+}
+.nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+}
+.nav li{
+    width: 25%;
+    text-align: center;
+}
+.nav li a{
+    color: #666;
+    display: block;
+    padding-bottom: 10px;
+}
+.nav li i{
+    background: burlywood;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    color: #fff;
+}
+.shop-bg{
+    background: #eee;
+    padding: 20px;
+}
+.shop-container{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+.shop-item{
+    width: 33%;
+    padding: 10px;
+}
+.shop-item img{width: 100%;display: block;}
+
+/* 
+    💥애니메이션 만들기💥 
+    1.시작스타일 만들기
+    2.최종스타일 만들기
+    3.언제 최종으로 변할지(마우스 올렸을때)
+    4.transition으로 애니메이션
+*/
+.shop-item>div{
+    position: relative;
+}
+.over{
+    width: 100%;
+    height: 0;
+    bottom: 0;
+    background-color: #0000006b;
+    position: absolute;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+}
+.over .price{
+    font-size: 50px;
+    color: #fff;
+    text-align: center;
+}
+.shop-item:hover .over{
+    height: 50%;
+    opacity: 1;
+}
+
+.landing-page{
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+.landing-top{
+    background-image: linear-gradient(#4E61C0, violet);
+    display: flex;
+    padding: 50px 100px 0 100px;
+    margin-bottom: 50px;
+}
+.landing-page .title{
+    color: #fff;
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+.landing-page .small-tit{
+    color: #fff;
+    font-size: 14px;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+.show-btn{
+    width: 100px;
+    height: 40px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+}
+.landingtop-right .img-box {
+    width: 325px;
+    display: block;
+}
+.landingtop-right .img-box img{
+    width: 100%;
+    display: block;
+}
+.landing-mid .tit{
+    text-align: center;
+    color: #222;
+    font-weight: bold;
+}
+.landing-page .text{
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    color: #222;
+    padding-bottom: 10px;
+}
+.landing-mid .show-btn{
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.navigation{
+    background: #4E61C0;
+    margin: 50px 0;
+    padding: 20px 50px;
+}
+.navigation .tit{
+    color: #fff;
+    padding-bottom: 20px;
+}
+.navigation .nav{
+    display: flex;
+}
+.navigation .nav i{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    background-color: #fff;
+    color: #4E61C0;
+    font-size: 20px;
+}
+.navigation .nav .small-tit{
+    display: block;
+}
+.landing-bottom .tit{
+    text-align: center;
+}
+.portfolio{
+    display: flex;
+    flex-wrap: wrap;
+}
+.portfolio>div{
+    width: 50%;
+    height: 300px;
+    background-size: contain;
+    background-position: top center;
+    padding: 30px 20px;
+    transition: all .5s ease-in-out;
+}
+.portfolio>div:nth-child(1){
+    background: url(../images/portfolio-1.jpg) no-repeat;
+}
+.portfolio>div:nth-child(2){
+    background: url(../images/portfolio-2.jpg) no-repeat;
+}
+.portfolio>div:nth-child(3){
+    background: url(../images/portfolio-3.jpg) no-repeat;
+}
+.portfolio>div:nth-child(4){
+    background: url(../images/portfolio-4.jpg) no-repeat;
+}
+.sns{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.sns li{
+    margin-right: 20px;
+    transition: all 1s ease-in-out;
+}
+.sns li i{
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #4E61C0;
+    color: #fff;
+}
+.portfolio>div:hover{
+    border: 20px solid #fff;
+}
+
+
+@media screen and (max-width:768px) {
+    .nav li{
+       width: 50%;
+    }
+    .nav li a{
+        font-size: 20px;
+    }
+    .landing-top{
+        display: block;
+    }
+    .landing-page .title{
+        text-align: center;
+    }
+    .landing-page .small-tit{
+        text-align: center;
+    }
+    .landing-top .show-btn{
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .landingtop-right .img-box{
+        width: 90%;
+    }
+}
+@media screen and (max-width:576px) {
+    .box{
+        height: 100%;
+    }
+    .nav li{
+       width: 100%;
+    }
+    .nav li a{
+        font-size: 22px;
+    }
+    .portfolio>div{
+        width: 100%;
+        height: 100%;
+        background-position: center center!important;
+        background-size: cover!important;
+    }
+}

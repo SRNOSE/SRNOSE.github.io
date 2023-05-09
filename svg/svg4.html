@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG-Circle</title>
+    <style>
+       html,body{
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+       }
+       body{
+        background-image: linear-gradient(to bottom,rgb(223, 219, 255),rgb(255, 204, 247), skyblue );
+       }
+       /* 4등분박스 */
+       .cbx{
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+       }
+       .cbx li{
+        width: 50%;
+        height: 50%;
+        position: relative;
+       }
+       .btns{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40%;
+        min-width: 150px;
+        border-radius: 50%;
+        background:url(../images/man.jpg) no-repeat top/cover;
+       }
+       .btns::before{
+        content: '';
+        display: block;
+        padding-top: 100%;
+        /* 비율밀기 */
+        /* 세로(200)/가로(200) *100% */
+       }
+       .btns svg{
+        position: absolute;
+        top: 0;
+       }
+       .c1{
+        fill: none;
+        stroke: red;
+        stroke-width: 10;
+        stroke-linecap: round;
+        stroke-dasharray: 300%;
+        stroke-dashoffset: 300%;
+        /* stroke-offset을 dasharray와 같은 값을 주면 시작점이 밀려서 공백부터 시작함 ->선이 숨겨지는 효과 */
+        transition: .5s ease-in-out;
+       }
+       .btns:hover .c1{
+        stroke-dashoffset: 0;
+       }
+       /* 두번째 원 */
+       .btns2{
+        background-image: url(../images/black.jpg);
+       }
+       .btns2 .c1{
+        stroke: black;
+        stroke-dasharray: 20;
+       }
+       .btns2:hover .c1{
+        stroke: red;
+       }
+       /* 세번쨰 원 */
+       .btns3{
+        background-image: url(../images/doc.jpg);
+       }
+       /* 네번째 원 */
+       .btns4{
+        background-image: url(../images/wan.jpg);
+       }
+       .btns4::before{
+        padding-top: 200%;
+        /* 200/100*100% */
+       }
+    </style>
+</head>
+<body>
+    <ul class="cbx">
+        <li>
+            <div class="btns">
+                <svg viewBox="0 0 200 200">
+                    <circle class="c1" cx="100" cy="100" r="95" transform="rotate(-90,100,100)"></circle>
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="btns btns2">
+                <svg viewBox="0 0 200 200">
+                    <circle class="c1" cx="100" cy="100" r="95" transform="rotate(-90,100,100)"></circle>
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="btns btns3">
+                <svg viewBox="0 0 200 200">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <!-- y1,2가 같으면 수평 그라디언트, x1,2가 같으면 수직 -->
+                            <stop offset="0%" stop-color="rgb(43,255,0)" />
+                            <stop offset="30%" stop-color="rgb(0,81,255)" />
+                            <stop offset="60%" stop-color="rgb(255,0,212)" />
+                            <stop offset="100%" stop-color="rgb(238,255,0)" />
+                        </linearGradient>
+                    </defs>
+                    <circle class="c1" cx="100" cy="100" r="95" style="stroke: url(#grad1);" transform="rotate(-90,100,100)"></circle>
+                </svg>
+            </div>
+        </li>
+        <li>
+            <div class="btns btns4">
+                <svg viewBox="0 0 100 200">
+                    <defs>
+                        <linearGradient id="grad2" x1="100%" y1="0%" x2="0%" y2="0%">
+                          <stop offset="0%" stop-color="red" />
+                          <stop offset="50%" stop-color="green" />
+                          <stop offset="100%" stop-color="hotpink" />
+                        </linearGradient>
+                      </defs>
+                    <ellipse class="c1" cx="50" cy="100" rx="95" ry="45" style="stroke:url(#grad2)" transform="rotate(-90,50,100)"></ellipse>
+                </svg>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-image: linear-gradient(to bottom, rgb(223, 219, 255),rgb(255, 204, 247), skyblue);
+}
+/* 4등분박스 */
+.cbx{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;/* 플렉스박스 */
+    flex-wrap: wrap;/* 자동줄바꿈 */
+    height: 100%;
+}
+.cbx li{
+    position: relative;
+    /* 부모자격 - .btns */
+    width: 50%;
+    height: 50%;
+    /* flex자식일때 높이값을 안주면 자동채움
+    (내용에 따라 유동적인 크기) */
+    /* outline: 2px dotted blue; */
+}
+/* 원을 담는 박스 */
+.btns{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    min-width: 150px;
+    background: url(images/man.jpg) no-repeat top/cover;
+    border-radius: 50%;
+}
+/* 비율밀기 */
+.btns::before{
+    content: '';
+    display: block;
+    padding-top: 100%;
+    
+}
+/* svg셋팅 */
+.btns svg{
+    position: absolute;
+    top: 0;
+    /* 부모박스가 패딩탑으로 비율밀기하므로
+    앱솔로 부모박스 맨위로 위치고정! 
+    svg 자체는 viewBox설정 때문에 채우기 비율유지함!*/
+}
+
+/* circle 설정 */
+.c1{
+    fill: none;
+    /* 채우기-기본색은 검정색(transparent-투명,none-없음) */
+    stroke: red;
+    /* 선색(안쓰면 안나옴) */
+    stroke-width: 10;
+    /* 선두께는 안쓰면 1px, 단위없으면 px */
+    stroke-linecap: round;/* 선끝둥글게 */
+
+    stroke-dasharray: 300%;
+    /* 데쉬어레이를 50%로 놓고 선,공백이 몇조각나는지 본다!
+    50% * 6조각 = 300% 즉, 선으로만 채우는 크기임! */
+
+    stroke-dashoffset: 300%;
+    /* 데쉬어레이와 같은 크기를 데쉬옵셋에 주면 시작점이
+    밀려서 공백부터 시작함-> 선이 숨겨지는 효과가 생김! */
+
+    /* 오버시 애니효과 위해 트랜지션주기 */
+    transition: .7s ease-in-out;
+}
+/* .btns 에 마우스 오버시 circle 옵셋값 0으로! */
+.btns:hover .c1{
+    stroke-dashoffset: 0;
+}
+
+/* 두번째 원 */
+.btns2{
+    background-image: url(images/black.jpg);
+}
+.btns2 .c1{
+    stroke: black;
+    stroke-dasharray: 20;
+}
+.btns2:hover .c1{
+    stroke: red;
+}
+
+/* 세번째 원 */
+.btns3{
+    background-image: url(images/doc.jpg);
+}
+
+/* 네번째 원 */
+.btns4{
+    width: 20%;
+    min-width: 75px;
+    background-image: url(images/wan.jpg);
+}
+.btns4::before{
+    padding-top: 200%;
+}
+
+/* svg text 박스 */
+.svgtxt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    min-width: 200px;
+    font-family: 'Fredoka One', cursive;
+    /* outline: 5px solid lime; */
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- normalize브라우저마다 다르게 보이는데 오차를 줄이기위해서 초기화하는 작업 -->
+    <title>table-align</title>
+</head>
+<body>
+    <div>
+        <table class="tbl">
+            <thead>
+                <tr>
+                   <th><p>ddd</p><p>ddd</p><p>ddd</p></th> 
+                   <td style="vertical-align: top;">222</td> 
+                   <td>333</td> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>4</th> 
+                    <td>5</td> 
+                    <td>6</td> 
+                 </tr>
+            </tbody>
+        </table>
+    </div>
+    <div style="display: table;"><!-- 테이블태그와 유사 -->
+        <div style="display: table-row;"><!-- tr과 유사 -->
+            <div style="display:table-cell">21</div><!-- td와 유사 -->
+            <div style="display:table-cell">22</div>
+        </div>
+
+    </div>
+    <div> <img src="https://mdn.mozillademos.org/files/12245/frame_image.svg" width="32" height="32"> image with a default alignment.</div> 
+</body>
+</html>

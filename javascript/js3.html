@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM객체</title>
+</head>
+
+<body>
+    <!-- 
+        웹페이지를 자바스크립트로 제어하기 위한 객체 모델
+        window객체의 document 속성을 통해서 사용
+        window가 창을 의미한다면  Document객체는 윈도우에 로드된 문서
+     -->
+
+    <!-- 1.제어대상 찾기 getElementsByTagName-->
+
+    <ul>
+        <li>html</li>
+        <li>css</li>
+        <li>java</li>
+    </ul>
+    <ol>
+        <li>html</li>
+        <li>css</li>
+        <li>java</li>
+    </ol>
+
+    <!-- 2.제어대상 찾기 getElementsByClassName-->
+
+    <ul>
+        <li>html</li>
+        <li class="active">css</li>
+        <li class="active">javascript</li>
+    </ul>
+
+    <!-- 3.제어대상 찾기 getElementById-->
+
+    <ul>
+        <li>html</li>
+        <li id="active">css</li>
+        <li>javascript</li>
+    </ul>
+
+    <!-- 4.제어대상 찾기 querySelector-->
+
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <ol>
+        <li>HTML</li>
+        <li class="active">CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+    <!-- 4.제어대상 찾기 querySelectorAll-->
+    <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <ol>
+        <li>HTML</li>
+        <li class="active">CSS</li>
+        <li>JavaScript</li>
+    </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        // var ul=document.getElementsByTagName('ul')[0];
+        // var lis=ul.getElementsByTagName('li');/* ul의 li만 스타일주고싶어서 */
+        // for(var i=0; lis.length; i++){
+        //     lis[i].style.color='red';
+        // }
+
+        // var lis=document.getElementsByClassName('active');
+        // for(var i=0; i<lis.length;i++){
+        //     lis[i].style.color='tomato';
+        // }
+
+        // var lis=document.getElementById('active');
+        // lis.style.color='blue';
+
+        // var li=document.querySelector('li');/* 이 조건을 가진 하나만 선택(젤 먼저 나타나는) */
+        // li.style.color='yellow';
+        // var lis=document.querySelector('.active');
+        // lis.style.color="green"
+
+        var lis=document.querySelectorAll('li');
+        for(var name in lis){/* 반복문을 실행할때마다 하나하나의 네임값을 lis에 담아줘라 */
+            lis[name].style.color='violet'
+        }
+    </script>
+</body>
+
+</html>
